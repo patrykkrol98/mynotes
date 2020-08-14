@@ -6,8 +6,6 @@ let lis;
 let text;
 let arrPos;
 
-populateList();
-
 button.addEventListener('click', function(e){
     if (listArr === null){
         listArr = []
@@ -34,7 +32,7 @@ function populateList() {
 }
 
 function checkClick (e) {
-    if(e.target.className == 'delete') {
+    if(e.target.className === 'delete') {
         deleteItem(e);
         populateList();
     }
@@ -46,3 +44,5 @@ function deleteItem (e) {
     listArr.splice(arrPos,1);
     localStorage.setItem("listArr", JSON.stringify(listArr));
 }
+
+populateList();
